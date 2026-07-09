@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONDA Medical Aesthetics — Laser Treatment Brochure</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sand: #F2EDE6;
+    --warm-white: #FAF8F5;
+    --ocean-deep: #2C3E35;
+    --gold: #B08D5B;
+    --gold-light: #C9A96E;
+    --charcoal: #1E1E1E;
+    --muted: #6B6560;
+    --rule: #D8D0C5;
+    --panel-w: 360px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #E8E2D9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .brochure {
+    display: grid;
+    grid-template-columns: repeat(3, var(--panel-w));
+    width: calc(var(--panel-w) * 3);
+    min-height: 720px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  }
+
+  /* ===================== PANEL SHARED ===================== */
+  .panel {
+    background: var(--warm-white);
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .panel:last-child { border-right: none; }
+
+  .panel-eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .panel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .panel-title small {
+    font-size: 22px;
+    display: block;
+  }
+
+  .panel-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .panel-body {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* ===================== PANEL 1 — IPL ===================== */
+  .best-for-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 4px;
+  }
+
+  .best-for-list {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .best-for-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11.5px;
+    color: var(--muted);
+    padding: 5px 0;
+    border-bottom: 1px solid #EDE8E0;
+  }
+
+  .best-for-list li:last-child { border-bottom: none; }
+
+  .bf-icon {
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    color: var(--gold);
+  }
+
+  .ipl-sub-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }
+
+  .img-placeholder {
+    background: var(--sand);
+    border: 1px solid var(--rule);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-bottom: 14px;
+  }
+
+  .tagline-bar {
+    background: var(--sand);
+    padding: 12px 16px;
+    margin: 16px 0 12px;
+    text-align: center;
+  }
+
+  .tagline-bar p {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+
+  .condition-icons {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+
+  .cond-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cond-icon {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 11px;
+  }
+
+  .cond-label {
+    font-size: 8px;
+    text-align: center;
+    color: var(--muted);
+    line-height: 1.3;
+    max-width: 44px;
+  }
+
+  /* ===================== PANEL 2 — FRAX ===================== */
+  .time-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .time-box {
+    border: 1px solid var(--rule);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .time-icon {
+    font-size: 16px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .time-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+
+  .time-unit {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .downtime-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .downtime-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .dt-box {
+    border: 1px solid var(--rule);
+    padding: 14px 12px;
+  }
+
+  .dt-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+
+  .dt-unit {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .dt-desc {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  .frax-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .frax-col-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .frax-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+
+  .frax-depth {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .frax-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .frax-list li {
+    font-size: 10.5px;
+    color: var(--muted);
+    padding: 3px 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .frax-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 9px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .what-to-expect {
+    background: var(--sand);
+    padding: 14px;
+    margin-top: auto;
+  }
+
+  .wte-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .wte-steps {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .wte-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    position: relative;
+  }
+
+  .wte-step:not(:last-child)::after {
+    content: '›';
+    position: absolute;
+    right: -4px;
+    top: 8px;
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  .wte-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--gold);
+  }
+
+  .wte-text {
+    font-size: 8px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.3;
+    max-width: 48px;
+  }
+
+  .wte-footnote {
+    font-size: 9px;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* ===================== PANEL 3 — LIGHT & BRIGHT ===================== */
+  .lb-sub {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .combo-block {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .combo-block:last-of-type { border-bottom: none; }
+
+  .combo-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .combo-title {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .combo-body {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .glow-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 2px;
+    margin-top: 14px;
+  }
+
+  .glow-sub {
+    font-size: 10px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .glow-body {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .glow-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .glow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .glow-icon {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 11px;
+  }
+
+  .glow-name {
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--charcoal);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .glow-desc {
+    font-size: 7.5px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ===================== FOOTER BAR ===================== */
+  .footer-bar {
+    grid-column: 1 / -1;
+    background: var(--ocean-deep);
+    padding: 20px 32px;
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  .footer-logo-sub {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+
+  .footer-col-label {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-list li {
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    padding: 3px 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .footer-list li::before {
+    content: '✓';
+    color: var(--gold-light);
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  .footer-cta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-cta-label {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .footer-cta-text {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .footer-custom-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-custom-label {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .footer-custom-text {
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+
+  .qr-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 6px;
+  }
+
+  .qr-box span {
+    font-size: 7px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ===================== CONTACT STRIP ===================== */
+  .contact-strip {
+    grid-column: 1 / -1;
+    background: var(--ocean-deep);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .contact-icon { color: var(--gold-light); font-size: 11px; }
+
+</style>
+</head>
+<body>
+
+<div style="width: calc(360px * 3);">
+  <div class="brochure">
+
+    <!-- ===== PANEL 1: IPL ===== -->
+    <div class="panel" data-document-role="page" data-label="Panel 1 — IPL">
+      <div class="panel-eyebrow">Laser Treatment</div>
+      <div class="panel-title">Intense Pulsed<br>Light (IPL)</div>
+      <div class="panel-rule"></div>
+      <p class="panel-body">IPL uses broad-spectrum light to target melanin and hemoglobin beneath the skin, reducing redness, broken capillaries, and pigmentation — while leaving surrounding tissue untouched. Treatments are quick with little to no downtime.</p>
+
+      <div class="best-for-label">Best For</div>
+      <ul class="best-for-list">
+        <li><span class="bf-icon">◎</span> Rosacea &amp; redness</li>
+        <li><span class="bf-icon">〜</span> Broken capillaries</li>
+        <li><span class="bf-icon">☀</span> Sun spots &amp; age spots</li>
+        <li><span class="bf-icon">◈</span> Uneven tone</li>
+        <li><span class="bf-icon">◇</span> Sun damage</li>
+      </ul>
+
+      <div class="ipl-sub-label">IPL for Rosacea</div>
+      <div class="img-placeholder">Image Placeholder</div>
+
+      <div class="ipl-sub-label">IPL for Pigmentation</div>
+      <div class="img-placeholder">Image Placeholder</div>
+
+      <div class="tagline-bar">
+        <p>Clearer. Calmer. More Radiant Skin.</p>
+      </div>
+
+      <div class="condition-icons">
+        <div class="cond-item">
+          <div class="cond-icon">◎</div>
+          <div class="cond-label">Rosacea</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-icon">〜</div>
+          <div class="cond-label">Flushing</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-icon">〰</div>
+          <div class="cond-label">Broken Capillaries</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-icon">☀</div>
+          <div class="cond-label">Sun spots</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-icon">◈</div>
+          <div class="cond-label">Age spots</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-icon">◇</div>
+          <div class="cond-label">Uneven tone &amp; Sun damage</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 2: FRAX ===== -->
+    <div class="panel" data-document-role="page" data-label="Panel 2 — Frax">
+      <div class="panel-eyebrow">Laser Resurfacing</div>
+      <div class="panel-title">Frax 1550<br>&amp; Frax 1940</div>
+      <div class="panel-rule"></div>
+      <p class="panel-body">Non-ablative fractional lasers on the Candela Nordlys® platform deliver controlled micro-columns of energy to stimulate collagen remodeling and natural resurfacing — rebuilding skin from within. Numbing cream is applied in office prior to treatment.</p>
+
+      <div class="time-row">
+        <div class="time-box">
+          <div class="time-icon">⏱</div>
+          <div>
+            <div class="time-num">30</div>
+            <div class="time-unit">Min numbing time</div>
+          </div>
+        </div>
+        <div class="time-box">
+          <div class="time-icon">⏱</div>
+          <div>
+            <div class="time-num">30</div>
+            <div class="time-unit">Min treatment time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="downtime-label">Downtime</div>
+      <div class="downtime-grid">
+        <div class="dt-box">
+          <div class="dt-num">3</div>
+          <div class="dt-unit">Days</div>
+          <div class="dt-desc">Redness &amp; warmth</div>
+        </div>
+        <div class="dt-box">
+          <div class="dt-num">5</div>
+          <div class="dt-unit">Days</div>
+          <div class="dt-desc">Dry, flaking skin as it renews</div>
+        </div>
+      </div>
+
+      <div class="frax-compare">
+        <div>
+          <div class="frax-num">1940</div>
+          <div class="frax-depth">Superficial</div>
+          <ul class="frax-list">
+            <li>Fine lines</li>
+            <li>Surface texture</li>
+            <li>Sun damage</li>
+            <li>Dullness</li>
+            <li>Uneven tone</li>
+          </ul>
+        </div>
+        <div>
+          <div class="frax-num">1550</div>
+          <div class="frax-depth">Deeper</div>
+          <ul class="frax-list">
+            <li>Acne scars</li>
+            <li>Deep wrinkles</li>
+            <li>Skin laxity</li>
+            <li>Rough texture</li>
+            <li>Pore size</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="what-to-expect">
+        <div class="wte-label">What to Expect</div>
+        <div class="wte-steps">
+          <div class="wte-step">
+            <div class="wte-icon">✦</div>
+            <div class="wte-text">Consultation &amp; skin assessment</div>
+          </div>
+          <div class="wte-step">
+            <div class="wte-icon">◎</div>
+            <div class="wte-text">Numbing cream for comfort</div>
+          </div>
+          <div class="wte-step">
+            <div class="wte-icon">⏱</div>
+            <div class="wte-text">Treatment 30–45 min</div>
+          </div>
+          <div class="wte-step">
+            <div class="wte-icon">〜</div>
+            <div class="wte-text">Mild redness for several days</div>
+          </div>
+          <div class="wte-step">
+            <div class="wte-icon">✧</div>
+            <div class="wte-text">Results improve over weeks</div>
+          </div>
+        </div>
+        <div class="wte-footnote">Most patients see best results with a series of treatments.</div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 3: LIGHT & BRIGHT ===== -->
+    <div class="panel" data-document-role="page" data-label="Panel 3 — Light and Bright">
+      <div class="panel-eyebrow">Signature Treatment</div>
+      <div class="panel-title">Light &amp;<br>Bright</div>
+      <div class="panel-rule"></div>
+      <div class="lb-sub">The Power of Two. The Results You See.</div>
+      <p class="panel-body">Light &amp; Bright pairs Ellipse IPL with Frax resurfacing in a single session to address both surface discoloration and deeper structural concerns — revealing clearer, smoother, more radiant skin.</p>
+
+      <div class="img-placeholder" style="height:70px;">Image Placeholder</div>
+
+      <div class="combo-block">
+        <div class="combo-icon">☀</div>
+        <div>
+          <div class="combo-title">IPL + Frax 1940</div>
+          <div class="combo-body">Best for pigmentation, redness, or sun damage combined with fine lines or mild texture irregularities. IPL clears the surface while Frax 1940 smooths and refreshes. A well-rounded treatment with minimal downtime — ideal as a starting combination for most patients.</div>
+        </div>
+      </div>
+
+      <div class="combo-block">
+        <div class="combo-icon">◈</div>
+        <div>
+          <div class="combo-title">IPL + Frax 1550</div>
+          <div class="combo-body">Ideal when pigmentation or rosacea is paired with deeper concerns — acne scarring, more pronounced wrinkles, or significant laxity. The 1550 goes deeper for intensive collagen remodeling while IPL clears discoloration at the surface simultaneously.</div>
+        </div>
+      </div>
+
+      <div class="glow-label">The Complete Glow Protocol</div>
+      <div class="glow-sub">Glacē™ Facial — before &amp; after</div>
+      <div class="glow-body">A Glacē™ facial in the days before Light &amp; Bright preps the skin — clearing dead cell buildup so laser energy penetrates more evenly. In the weeks following, a Glacē™ supports healing: hydrodermabrasion gently clears treated skin as it turns over, LED therapy calms inflammation and boosts radiance, and cupping massage promotes lymphatic drainage and reduces puffiness.</div>
+
+      <div class="glow-icons">
+        <div class="glow-item">
+          <div class="glow-icon">〜</div>
+          <div class="glow-name">Hydrodermabrasion</div>
+          <div class="glow-desc">Deeply cleanses &amp; exfoliates</div>
+        </div>
+        <div class="glow-item">
+          <div class="glow-icon">☀</div>
+          <div class="glow-name">LED Therapy</div>
+          <div class="glow-desc">Calms &amp; boosts radiance</div>
+        </div>
+        <div class="glow-item">
+          <div class="glow-icon">◎</div>
+          <div class="glow-name">Cupping Massage</div>
+          <div class="glow-desc">Supports lymphatic drainage</div>
+        </div>
+        <div class="glow-item">
+          <div class="glow-icon">✧</div>
+          <div class="glow-name">Enhanced Results</div>
+          <div class="glow-desc">Healthier, glowing skin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer-bar">
+      <div class="footer-logo">
+        <div style="font-size:11px; letter-spacing:4px; color:var(--gold-light); text-transform:uppercase; margin-bottom:2px;">✦</div>
+        <div class="footer-logo-name">ONDA</div>
+        <div class="footer-logo-sub">Medical Aesthetics</div>
+        <div class="footer-tagline">Advanced technology.<br>Personalized care.<br>Beautiful, natural results.</div>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Why Patients Choose ONDA</div>
+        <ul class="footer-list">
+          <li>Personalized treatment plans</li>
+          <li>Advanced Candela Nordlys® technology</li>
+          <li>Experienced, medical providers</li>
+          <li>Natural-looking results</li>
+          <li>Medical-grade skincare</li>
+          <li>Ongoing skin health, not quick fixes</li>
+        </ul>
+      </div>
+
+      <div class="footer-custom-col">
+        <div class="footer-custom-label">Customized for You</div>
+        <div class="footer-custom-text">Every treatment plan is customized. Pricing varies based on your goals, treatment area, and recommended plan. Package pricing available.</div>
+      </div>
+
+      <div class="footer-cta-col">
+        <div class="footer-cta-label">Ready to Reveal Your Best Skin?</div>
+        <div class="footer-cta-text">Schedule your complimentary laser consultation today.</div>
+        <div class="qr-box">
+          <span>QR Code Here</span>
+          <span style="font-size:6px; margin-top:2px;">Scan to Book</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT STRIP ===== -->
+    <div class="contact-strip">
+      <div class="contact-item"><span class="contact-icon">☎</span> 413-923-7704</div>
+      <div class="contact-item"><span class="contact-icon">⊕</span> ondaaesthetics.com</div>
+      <div class="contact-item"><span class="contact-icon">◎</span> Serving the Pioneer Valley</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
